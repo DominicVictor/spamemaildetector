@@ -23,8 +23,8 @@ const HomePage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
-  const API_URL = import.meta.env.VITE_API_URL || "https://spamemaildetector-eqh2.onrender.com";
-
+ const API_URL = "https://spamemaildetector-eqh2.onrender.com/predict";
+ 
   const handleAnalyse = async () => {
     if (!subject.trim() && !body.trim()) {
       setError("Please enter at least a subject or body.");
