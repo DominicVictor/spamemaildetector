@@ -23,7 +23,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/predict";
+  const API_URL = import.meta.env.VITE_API_URL || "https://spamemaildetector-eqh2.onrender.com";
 
   const handleAnalyse = async () => {
     if (!subject.trim() && !body.trim()) {
