@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Spam keywords list
 SPAM_KEYWORDS = ['free', 'winner', 'congratulations', 'prize', 'lottery', 
