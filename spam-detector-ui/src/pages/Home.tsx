@@ -2,11 +2,10 @@ import { useState } from "react";
 import {
   HiShieldCheck,
   HiLightningBolt,
-  HiExclamationTriangle,
+  HiExclamationCircle,
   HiCheckCircle,
   HiChartBar,
   HiSearch,
-  HiExclamationCircle,
 } from "react-icons/hi";
 import "../styles/home.css";
 
@@ -60,7 +59,7 @@ const HomePage = () => {
   return (
     <div className="spam-detector">
       <div className="card">
-        {/* Hero section with shield icon */}
+        {/* Hero section */}
         <div className="hero">
           <HiShieldCheck className="hero-icon" size={48} color="#5B9BD5" />
           <h1>Email Detector</h1>
@@ -85,7 +84,7 @@ const HomePage = () => {
           className="input-textarea"
         />
 
-        {/* Analyse button with lightning icon */}
+        {/* Analyse button */}
         <button onClick={handleAnalyse} disabled={loading} className="analyse-btn">
           {loading ? (
             <span className="loader"></span>
@@ -97,7 +96,7 @@ const HomePage = () => {
           )}
         </button>
 
-        {/* Error message with icon */}
+        {/* Error display */}
         {error && (
           <div className="error">
             <HiExclamationCircle size={20} style={{ marginRight: "0.4rem", verticalAlign: "middle" }} />
@@ -105,13 +104,13 @@ const HomePage = () => {
           </div>
         )}
 
-        {/* Result display – all icons */}
+        {/* Result display – RED for spam, GREEN for legit */}
         {result && (
           <div className={`result ${result.isSpam ? "spam" : "ham"}`}>
             <div className="result-badge">
               {result.isSpam ? (
                 <>
-                  <HiExclamationTriangle size={22} color="#c0392b" />
+                  <HiExclamationCircle size={22} color="#c0392b" />
                   <span> SPAM</span>
                 </>
               ) : (
